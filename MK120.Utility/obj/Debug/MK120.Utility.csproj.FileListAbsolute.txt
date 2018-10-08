@@ -1,0 +1,8 @@
+C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\bin\Debug\MK120.Utility.dll
+C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\bin\Debug\MK120.Utility.pdb
+C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\obj\Debug\MK120.Utility.csprojResolveAssemblyReference.cache
+C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\obj\Debug\MK120.Utility.csproj.CoreCompileInputs.cache
+C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\obj\Debug\MK120.Utility.dll
+C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\obj\Debug\MK120.Utility.pdb
+C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\bin\Debug\MK120.Model.dll
+C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\bin\Debug\MK120.Model.pdb
