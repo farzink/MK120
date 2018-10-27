@@ -13,11 +13,21 @@ namespace MK120.Model.models
         public Colors Color { get; set; }
         public Field()
         {
-            this.Piece = null;            
+            this.Piece = null;
         }
         public bool IsOccupied()
         {
             return this.Piece != null;
+        }
+        public void OccupyBy(AbstractPiece piece)
+        {
+            this.Piece = piece;
+        }
+        public AbstractPiece Kick()
+        {
+            AbstractPiece currentPiece = this.Piece;
+            this.Piece = null;
+            return currentPiece;
         }
     }
 }

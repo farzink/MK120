@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace MK120.Model.models
 {
-    public class AbstractPiece
+    public abstract class AbstractPiece
     {
         protected char letterDisplay;
         protected Colors color;
         protected bool hasBeenMoved = false;
-        public char DisplayLetter {
+        public char DisplayLetter
+        {
             get
             {
                 return letterDisplay;
@@ -26,5 +27,10 @@ namespace MK120.Model.models
                 return color;
             }
         }
+        public void Moved()
+        {
+            hasBeenMoved = true;
+        }
+        abstract public bool IsLegalMove(int dx, int dy);
     }
 }

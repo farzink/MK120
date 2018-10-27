@@ -7,15 +7,22 @@ using System.Threading.Tasks;
 
 namespace MK120.Model.models
 {
-    public class Queen: AbstractPiece
+    public class Queen : AbstractPiece
     {
         public Queen()
         {
             this.letterDisplay = 'Q';
         }
-        public Queen(Colors color): this()
+        public Queen(Colors color) : this()
         {
             this.color = color;
+        }
+
+        public override bool IsLegalMove(int dx, int dy)
+        {
+            dx = Math.Abs(dx);
+            dy = Math.Abs(dy);
+            return (dx == 0 || dy == 0 || dx == dy);
         }
     }
 }

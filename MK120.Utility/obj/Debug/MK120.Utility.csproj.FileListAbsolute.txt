@@ -6,3 +6,20 @@ C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\obj
 C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\obj\Debug\MK120.Utility.pdb
 C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\bin\Debug\MK120.Model.dll
 C:\Users\f-project\Documents\Visual Studio 2017\Projects\MK120\MK120.Utility\bin\Debug\MK120.Model.pdb
+C:\Users\Farzin\Desktop\mk120\mi133-examples-master\MK120.Utility\bin\Debug\MK120.Utility.dll
+C:\Users\Farzin\Desktop\mk120\mi133-examples-master\MK120.Utility\bin\Debug\MK120.Utility.pdb
+C:\Users\Farzin\Desktop\mk120\mi133-examples-master\MK120.Utility\bin\Debug\MK120.Model.dll
+C:\Users\Farzin\Desktop\mk120\mi133-examples-master\MK120.Utility\bin\Debug\MK120.Model.pdb
+C:\Users\Farzin\Desktop\mk120\mi133-examples-master\MK120.Utility\obj\Debug\MK120.Utility.csprojAssemblyReference.cache
+C:\Users\Farzin\Desktop\mk120\mi133-examples-master\MK120.Utility\obj\Debug\MK120.Utility.csproj.CoreCompileInputs.cache
+C:\Users\Farzin\Desktop\mk120\mi133-examples-master\MK120.Utility\obj\Debug\MK120.Utility.csproj.CopyComplete
+C:\Users\Farzin\Desktop\mk120\mi133-examples-master\MK120.Utility\obj\Debug\MK120.Utility.dll
+C:\Users\Farzin\Desktop\mk120\mi133-examples-master\MK120.Utility\obj\Debug\MK120.Utility.pdb
+C:\Users\f-project\Desktop\C#\MK120\MK120.Utility\bin\Debug\MK120.Utility.dll
+C:\Users\f-project\Desktop\C#\MK120\MK120.Utility\bin\Debug\MK120.Utility.pdb
+C:\Users\f-project\Desktop\C#\MK120\MK120.Utility\bin\Debug\MK120.Model.dll
+C:\Users\f-project\Desktop\C#\MK120\MK120.Utility\bin\Debug\MK120.Model.pdb
+C:\Users\f-project\Desktop\C#\MK120\MK120.Utility\obj\Debug\MK120.Utility.csprojResolveAssemblyReference.cache
+C:\Users\f-project\Desktop\C#\MK120\MK120.Utility\obj\Debug\MK120.Utility.csproj.CoreCompileInputs.cache
+C:\Users\f-project\Desktop\C#\MK120\MK120.Utility\obj\Debug\MK120.Utility.dll
+C:\Users\f-project\Desktop\C#\MK120\MK120.Utility\obj\Debug\MK120.Utility.pdb

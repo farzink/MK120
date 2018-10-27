@@ -26,6 +26,10 @@ namespace MK120.Utility
         {
             Console.BackgroundColor = ConsoleColor.Gray;
         }
+        public void BackYellow()
+        {
+            Console.BackgroundColor = ConsoleColor.Green;
+        }
         public void BackReset()
         {
             Console.BackgroundColor = ConsoleColor.Black;

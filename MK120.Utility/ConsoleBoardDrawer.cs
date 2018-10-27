@@ -74,8 +74,9 @@ namespace MK120.Utility
 
 
 
-        public void drawBoard(Board board)
+        public void drawBoard(Board board, int x = 3, int y = 3)
         {
+            ClearScreen();
             drawTopLine();
             for (int i = 0; i < 8; i++)
             {
@@ -91,6 +92,8 @@ namespace MK120.Utility
                             cch.BackGray();
                         if (field.Piece.Color == Colors.Red)
                             cch.ForeRed();
+                        if (i == y && k == x)
+                            cch.BackYellow();
                         W(" ");
                         W(field.Piece.DisplayLetter.ToString(), 1);
                         cch.ResetFore();
@@ -101,6 +104,8 @@ namespace MK120.Utility
                     {
                         if (field.Color == Colors.Gray)
                             cch.BackGray();
+                        if (i == y && k == x)
+                            cch.BackYellow();
                         W(" ", 2);
                         cch.BackReset();
 
@@ -116,7 +121,10 @@ namespace MK120.Utility
             }
             drawButtomLine();
         }
-
+        public void ClearScreen()
+        {
+            Console.Clear();
+        }
 
         void W(string message, int spaces = 0)
         {
