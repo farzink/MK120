@@ -20,7 +20,12 @@ namespace MK120.Model.models
 
         public override bool IsLegalMove(int dx, int dy)
         {
-            throw new NotImplementedException();
+            if ((Math.Abs(dx) <= 1) && (Math.Abs(dy) <= 1))
+            {
+                hasBeenMoved = true;
+                return true;
+            }
+            return false;
         }
     }
 }

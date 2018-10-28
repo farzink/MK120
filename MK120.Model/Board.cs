@@ -147,12 +147,175 @@ namespace MK120.Model.models
         }
         public void SetFieldAt(int x, int y, AbstractPiece piece)
         {
-            Fields[x, y].OccupyBy(piece);          
-            
+            Fields[x, y].OccupyBy(piece);
+
+        }
+        public IList<CoordinatationPair> CalulateValidMoveForCurrentPiece(int x, int y, AbstractPiece piece)
+        {
+            var direction = (piece.Color == Colors.White) ? true : false;
+            IList<CoordinatationPair> validMoves = new List<CoordinatationPair>();
+            for (int i = 0; i < 8; i++)
+            {
+                for (int k = 0; k < 8; k++)
+                {
+                    int dx = (direction) ? x - i : i - x;
+                    int dy = (direction) ? y - k : k - y;
+                    if (piece.IsLegalMove(dx, dy))
+                        validMoves.Add(new CoordinatationPair
+                        {
+                            X = k,
+                            Y = i
+                        });
+                    if (piece is Pawn)
+                    {
+                        if (Fields[i, k].IsOccupied())
+                        {
+                            if (((Pawn)piece).IsLegalAttackMove(dx, dy, true))
+                                validMoves.Add(new CoordinatationPair
+                                {
+                                    X = k,
+                                    Y = i
+                                });
+                        }
+                    }
+                }
+            }
+            return validMoves;
+
         }
         public void EmptyField(int x, int y)
         {
             Fields[x, y].Kick();
+        }
+        public bool FindObstacle(int x, int y, int px, int py, AbstractPiece piece)
+        {                       
+            switch (piece)
+            {
+                case Queen q:
+                    int hits = 0;
+                    if (x == px)
+                    {                        
+                        for (int i = ((y < py) ? y : py); i <= ((y > py) ? y : py); i++)
+                        {
+                            if (Fields[i, x].IsOccupied())
+                            {
+                                if (i != y && i != py)
+                                    hits++;
+                            }
+                        }
+                        if (hits > 0)
+                            return true;
+                    }
+                    else if (y == py)
+                    {                        
+                        for (int i = ((x < px) ? x : px); i <= ((x > px) ? x : px); i++)
+                        {
+                            if (Fields[y, i].IsOccupied())
+                            {
+                                if (i != x && i != px)
+                                    hits++;
+                            }
+                        }
+                        if (hits > 0)
+                            return true;
+                    }
+                    else
+                    {
+                        hits = 0;
+                        int count = 0;
+                        while (x != px)
+                        {
+                            if (Fields[y, x].IsOccupied())
+                            {
+                                if (px != x && py != y && count != 0)
+                                    hits++;
+                            }
+                            if (x < px)
+                                x++;
+                            else
+                                x--;
+                            if (y < py)
+                                y++;
+                            else
+                                y--;
+                            count++;
+                        }
+                        if (hits > 0)
+                            return true;
+                        break;
+                    }
+                    break;
+                case Castle c:
+                    int _hits = 0;
+                    if (x == px)
+                    {                        
+                        for (int i = ((y < py) ? y : py); i <= ((y > py) ? y : py); i++)
+                        {
+                            if (Fields[i, x].IsOccupied())
+                            {
+                                if (i != y && i != py)
+                                    _hits++;
+                            }
+                        }
+                        if (_hits > 0)
+                            return true;
+                    }
+                    else
+                    {                        
+                        for (int i = ((x < px) ? x : px); i <= ((x > px) ? x : px); i++)
+                        {
+                            if (Fields[y, i].IsOccupied())
+                            {
+                                if (i != x && i != px)
+                                    _hits++;
+                            }
+                        }
+                        if (_hits > 0)
+                            return true;
+                    }
+                    break;
+                case Bishop b:
+                    int __hits = 0;
+                    int _counter = 0;
+                    while (x != px)
+                    {
+                        if (Fields[y, x].IsOccupied())
+                        {
+                            if (px != x && py != y && _counter != 0)
+                                __hits++;
+                        }
+                        if (x < px)
+                            x++;
+                        else
+                            x--;
+                        if (y < py)
+                            y++;
+                        else
+                            y--;
+                        _counter++;
+                    }
+                    if (__hits > 0)
+                        return true;
+                    break;
+            }
+            return false;
+        }
+        public bool IsValidAttackMove(int x, int y, int rx, int ry, AbstractPiece piece)
+        {
+            var direction = (piece.Color == Colors.White) ? true : false;
+            int dx = (direction) ? rx - x : x - rx;
+            int dy = (direction) ? ry - y : y - ry;
+            switch (piece)
+            {
+                case Pawn p:
+                    if (p.IsLegalAttackMove(dx, dy, true))
+                        return true;
+                    break;
+            }
+
+
+
+            return false;
         }
 
 

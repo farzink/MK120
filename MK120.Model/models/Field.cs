@@ -21,6 +21,7 @@ namespace MK120.Model.models
         }
         public void OccupyBy(AbstractPiece piece)
         {
+            piece.Moved();
             this.Piece = piece;
         }
         public AbstractPiece Kick()
