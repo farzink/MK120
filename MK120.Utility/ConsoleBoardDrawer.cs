@@ -74,9 +74,8 @@ namespace MK120.Utility
 
 
 
-        public void drawBoard(Board board, IList<CoordinatationPair> validMoves, int x = 3, int y = 3 )
-        {
-            ClearScreen();
+        public void drawBoard(Board board, IList<CoordinatationPair> validMoves, int x = 3, int y = 3)
+        {            
             drawTopLine();
             var toColor = true;
             for (int i = 0; i < 8; i++)
@@ -149,7 +148,7 @@ namespace MK120.Utility
             Console.Clear();
         }
 
-        void W(string message, int spaces = 0)
+        public void W(string message, int spaces = 0)
         {
             Console.Write(message);
             for(int i = 0; i < spaces; i++)
@@ -157,7 +156,7 @@ namespace MK120.Utility
                 Console.Write(" ");
             }
         }
-        void Wl(string message)
+        public void Wl(string message)
         {
             Console.WriteLine(message);
         }

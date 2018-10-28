@@ -1,4 +1,5 @@
-﻿using MK120.Model.models;
+﻿using MK120.Model.enums;
+using MK120.Model.models;
 using MK120.Utility;
 using System;
 using System.Collections.Generic;
@@ -20,8 +21,9 @@ namespace MK120.Main
             //{
             //    board.Move(0, 1, 2, 2);
             //}
+            
             ConsoleBoardDrawer cbd = new ConsoleBoardDrawer(new ConsoleColorHelper());
-
+            
             Console.WriteLine("Press a ket to start");
             int x = 3;
             int y = 3;
@@ -34,8 +36,9 @@ namespace MK120.Main
             int py = 3;
             var rx = 3;
             var ry = 3;
+            Colors turn = Colors.White;
             while (key.Key != ConsoleKey.Escape)
-            {
+            {                
                 IList<String> messages = new List<String>();
                 IList<CoordinatationPair> validMoves = null;
                 key = Console.ReadKey();
@@ -90,11 +93,18 @@ namespace MK120.Main
                         var field = board.GetFieldAt(y, x);
                         if (field.IsOccupied())
                         {
-                            f = field;
-                            px = x;
-                            py = y;
-                            rx = x;
-                            ry = y;
+                            if (field.Piece.Color == turn)
+                            {
+                                f = field;
+                                px = x;
+                                py = y;
+                                rx = x;
+                                ry = y;
+                            }
+                            else
+                            {
+                                messages.Add("This is " + turn + " turn");
+                            }
                         }
                         else
                         {
@@ -149,6 +159,7 @@ namespace MK120.Main
                                             rx = x;
                                             ry = y;
                                             validMoves = null;
+                                            turn = (turn == Colors.White) ? Colors.Red : Colors.White;
                                         }
                                         else
                                         {
@@ -181,6 +192,7 @@ namespace MK120.Main
                                                     rx = x;
                                                     ry = y;
                                                     validMoves = null;
+                                                    turn = (turn == Colors.White) ? Colors.Red : Colors.White;
                                                 }
                                                 else
                                                 {
@@ -214,6 +226,7 @@ namespace MK120.Main
                                                     rx = x;
                                                     ry = y;
                                                     validMoves = null;
+                                                    turn = (turn == Colors.White) ? Colors.Red : Colors.White;
                                                 }
                                                 else
                                                 {
@@ -247,6 +260,7 @@ namespace MK120.Main
                                                     rx = x;
                                                     ry = y;
                                                     validMoves = null;
+                                                    turn = (turn == Colors.White) ? Colors.Red : Colors.White;
                                                 }
                                                 else
                                                 {
@@ -280,6 +294,7 @@ namespace MK120.Main
                                                     rx = x;
                                                     ry = y;
                                                     validMoves = null;
+                                                    turn = (turn == Colors.White) ? Colors.Red : Colors.White;
                                                 }
                                                 else
                                                 {
@@ -310,9 +325,11 @@ namespace MK120.Main
                     }
                     validMoves = board.CalulateValidMoveForCurrentPiece(ry, rx, f.Piece);
                 }
+                cbd.ClearScreen();
+                cbd.Wl("================ This is " + turn + " turn ================");
                 cbd.drawBoard(board, validMoves, x, y);
                 cbd.PrintMessages(messages);
             }
-        }
+        }        
     }
 }
